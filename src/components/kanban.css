@@ -1,0 +1,141 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem;
+  background-color: #164ca7;
+  flex-wrap: wrap;
+}
+
+.navbar input {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  width: 250px;
+  max-width: 90%;
+  outline: none;
+  font-size: 1rem;
+}
+
+.navbar button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  border: none;
+  background-color: #ffffff;
+  color: #164ca7;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar button:hover {
+  background-color: #f0f0f0;
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+
+.column {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  background-color: #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.column h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #164ca7;
+  text-align: center;
+}
+
+.column:hover {
+  transform: translateY(-3px);
+}
+
+.chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chip {
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #cbd5e0;
+  cursor: grab;
+  transition: all 0.2s ease-in-out;
+  word-break: break-word;
+  font-size: 0.95rem;
+}
+
+.chip:hover {
+  background-color: #f0f4ff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chip:active {
+  cursor: grabbing;
+  opacity: 0.9;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1024px) {
+  .columns-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .column {
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .navbar input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navbar input {
+    width: 90%;
+  }
+
+  .navbar button {
+    width: 90%;
+  }
+
+  .chip {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

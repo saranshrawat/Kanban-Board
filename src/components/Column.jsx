@@ -22,36 +22,20 @@ const handleDrop=(e, newStatus)=>{
 }
    
     return (
-       <div  
-        style={{display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:'center'}}
-       >
-
-
-        {
-            columns.map((col)=>(
-                    <div 
-                    onDragOver={(e)=>e.preventDefault()}
-                    onDrop={(e)=>handleDrop(e,col.id)}
-                    key={col.id}
-                     style={{ width: '100%',padding:"15px", borderRadius: "8px",height:"60vh",border:'5px solid white'}}
-                    > 
-                      <h2>{col.title}</h2> 
-
-
-       {/*  render the chips component for each column and pass the status of current column as props */}
-                    <Chips status={col.id}/>
-
-                    </div>
-
-            ))
-
-
-
-
-        }
-
-       </div> 
-
+       <div className="columns-container">
+  {columns.map((col) => (
+    <div
+      className="column"
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => handleDrop(e, col.id)}
+      key={col.id}
+    >
+      <h2>{col.title}</h2>
+      {/* this renders the chips component for each column */}
+      <Chips status={col.id} />
+    </div>
+  ))}
+</div>
 
   )
 }

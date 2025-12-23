@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import './kanban.css'
 
 function Chips({status}) {
 
@@ -18,32 +19,19 @@ function Chips({status}) {
  }
 
   return (
-    <div style={{display:'flex',flexDirection:'column', gap:'10px', flexWrap:'wrap', width:'300px'}}>
-         
-            {
-               filteredTasks.map((task)=>(
-
-      <div key={task.id} 
-           onDragStart={(e)=>handleDragStart(e, task.id)}
-            draggable={true}
-           style={{ 
-            color:'black',
-            padding: '6px 12px',
-            cursor:'grab',
-            border: '1px solid black',
-            borderRadius: '20px',
-            background: 'white',
-            width:'auto',
-            maxWidth: '100%',     // prevents overflow
-            wordBreak: 'break-word'}}>
-                        {task.text}
-                    </div>
-                ))
-            }
-         
-
-         
+   <div className="chips-container">
+  {filteredTasks.map((task) => (
+    <div
+      key={task.id}
+      className="chip"
+      draggable
+      onDragStart={(e) => handleDragStart(e, task.id)}
+    >
+      {task.text}
     </div>
+  ))}
+</div>
+
   )
 }
 

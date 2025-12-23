@@ -23,16 +23,10 @@ const handleChange = (e) => {
 
   return (
    
-        <div>
-      <input
-        type="text"
-        placeholder="Add item"
-        value={input}
-        onChange={handleChange}
-      />
-
-      <button onClick={addItems}>Add</button>
-    </div>
+      <div className="navbar">
+  <input type="text" placeholder="Add item" value={input} onChange={handleChange} />
+  <button onClick={addItems}>Add</button>
+</div>
 
 
    
