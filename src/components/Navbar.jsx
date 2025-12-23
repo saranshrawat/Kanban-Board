@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux';
 import { addTodo } from '../global/slice.js';
+import './kanban.css'
 
 function Navbar() {
   const [input, setInput]= useState("");
