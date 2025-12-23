@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import Chips from './chips'
 import { moveTask } from '../global/slice';
+import './kanban.css'
 
 function Column() {
   const dispatch= useDispatch();
